@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chat Pro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+        :root {
+            --bg-deep: #0f172a;
+            --border: #334155;
+            --accent: #6366f1;
+            --user-bg: #4f46e5;
+            --bot-bg: #1f2937;
+            --text: #f8fafc;
+        }
+
+        body { 
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+            color: var(--text);
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        /* حاوية الشات - مرنة وتسمح بالـ Scroll بدون تداخل */
+        .chat-wrapper {
+            flex: 1;
+            overflow-y: auto;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding: 20px 10px;
+        }
+
+        .chat-container {
+            width: 100%;
+            max-width: 800px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* الرسائل */
+        .msg-user { align-self: flex-end; max-width: 85%; display: flex; flex-direction: column; align-items: flex-end; }
+        .msg-bot { align-self: flex-start; max-width: 90%; display: flex; flex-direction: column; align-items: flex-start; }
+
+        .bubble {
+            padding: 12px 18px;
+            border-radius: 18px;
+            font-size: 16px;
+            line-height: 1.6;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .user-bubble { background: var(--user-bg); border-radius: 18px 18px 4px 18px; color: white; }
+        
+        /* ضبط المقال لليسار */
+        .article-bubble { 
+            direction: ltr !important; 
+            text-align: left !important; 
+            border-radius: 18px 18px 18px 4px !important; 
+        }
+
+        .bot-bubble { 
+            background: var(--bot-bg); 
+            border: 1px solid var(--border); 
+            border-radius: 18px 18px 18px 4px;
+            direction: ltr;
+            text-align: left;
+        }
+
+        /* زر النسخ */
+        .copy-btn {
+            background: transparent;
+            color: #94a3b8;
+            font-size: 11px;
+            margin-top: 5px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .copy-btn:hover { color: var(--accent); }
+
+        /* شريط الإدخال - ثابت في مكانه الطبيعي في الـ Flex */
+        .input-area {
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid var(--border);
+            padding: 15px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .input-bar {
+            width: 100%;
+            max-width: 800px;
+            background: var(--bot-bg);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            padding: 5px 10px;
+            gap: 10px;
+        }
+
+        .input-bar input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 10px;
+            direction: ltr;
+        }
+
+        .btn-send { background: var(--accent); color: white; padding: 8px 20px; border-radius: 10px; font-weight: bold; }
+        .btn-article { color: #00c6a2; font-size: 13px; font-weight: bold; border: 1px solid #00c6a2; padding: 5px 12px; border-radius: 8px; }
+
+        /* المودال */
+        #modal-backdrop {
+            display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.8);
+            z-index: 100; align-items: center; justify-content: center;
+        }
+        .modal-box { background: var(--bot-bg); padding: 25px; border-radius: 20px; width: 90%; max-width: 600px; border: 1px solid var(--border); }
+        textarea { width: 100%; height: 200px; background: #0f172a; border: 1px solid var(--border); border-radius: 12px; padding: 12px; color: white; direction: ltr; margin-top: 10px; }
+
+        /* Markdown Bullets */
+        .prose ul { list-style: disc; padding-left: 20px; }
+        
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 10px; }
+    </style>
+</head>
+<body>
+
+    <div class="chat-wrapper" id="scroll-area">
+        <div id="chat-box" class="chat-container">
+            </div>
+    </div>
+
+    <div class="input-area">
+        <div class="input-bar">
+            <button class="btn-article" onclick="toggleModal()">Article</button>
+            <input id="user-input" type="text" placeholder="Type here..." onkeydown="if(event.key==='Enter') sendMessage()">
+            <button id="send-btn" class="btn-send" onclick="sendMessage()">Send</button>
+            <button id="stop-btn" class="bg-red-600 text-white px-4 py-2 rounded-lg hidden" onclick="stopGeneration()">Stop</button>
+        </div>
+    </div>
+
+    <div id="modal-backdrop">
+        <div class="modal-box text-center">
+            <h2 class="text-xl font-bold">Paste English Article</h2>
+            <textarea id="modal-input" placeholder="Paste text here..."></textarea>
+            <div class="flex justify-end gap-4 mt-4">
+                <button onclick="toggleModal()" class="text-gray-400">Cancel</button>
+                <button onclick="sendFromModal()" class="btn-send">Process Article</button>
+            </div>
+        </div>
+    </div>
+<script>
+    const API_URL = "http://127.0.0.1:8000/chat";
+    let controller = null;
+
+    // --- الجزء الجديد: إدارة الجلسة (Session ID) ---
+    // sessionStorage يتم مسحه تلقائياً عند إغلاق المتصفح أو التبويب
+    if (!sessionStorage.getItem('chat_session_id')) {
+        // توليد معرف فريد عشوائي
+        const randomId = 'sess_' + Math.random().toString(36).substr(2, 9) + Date.now();
+        sessionStorage.setItem('chat_session_id', randomId);
+    }
+    const currentSessionId = sessionStorage.getItem('chat_session_id');
+    // --------------------------------------------
+
+    function toggleModal() {
+        const m = document.getElementById('modal-backdrop');
+        m.style.display = (m.style.display === 'flex') ? 'none' : 'flex';
+    }
+
+    function sendFromModal() {
+        const val = document.getElementById('modal-input').value.trim();
+        if(val) { sendMessage(val, true); toggleModal(); document.getElementById('modal-input').value=''; }
+    }
+
+    async function copyText(text, btn) {
+        await navigator.clipboard.writeText(text);
+        btn.innerText = "Copied!";
+        setTimeout(() => btn.innerText = "Copy", 2000);
+    }
+
+    function scrollToBottom() {
+        const wrapper = document.getElementById('scroll-area');
+        wrapper.scrollTo({ top: wrapper.scrollHeight, behavior: 'smooth' });
+    }
+
+    async function sendMessage(manualText = null, isArticle = false) {
+        const input = document.getElementById('user-input');
+        const chatBox = document.getElementById('chat-box');
+        const text = manualText || input.value.trim();
+        if(!text) return;
+
+        if(!manualText) input.value = '';
+        document.getElementById('send-btn').classList.add('hidden');
+        document.getElementById('stop-btn').classList.remove('hidden');
+
+        controller = new AbortController();
+
+        // فقاعة المستخدم
+        const userClass = isArticle ? "article-bubble" : "";
+        chatBox.innerHTML += `
+            <div class="msg-user">
+                <div class="bubble user-bubble ${userClass}">${isArticle ? "📄 Article Added" : text}</div>
+                <button class="copy-btn" onclick="copyText('${text.replace(/'/g, "\\'")}', this)">Copy</button>
+            </div>`;
+        
+        const botId = "bot-" + Date.now();
+        chatBox.innerHTML += `
+            <div class="msg-bot">
+                <div id="${botId}" class="bubble bot-bubble prose prose-invert"></div>
+                <button id="btn-${botId}" class="copy-btn hidden">Copy Result</button>
+            </div>`;
+        
+        scrollToBottom();
+
+        try {
+            const res = await fetch(API_URL, {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                // التعديل هنا: إرسال الـ session_id مع الطلب
+                body: JSON.stringify({
+                    text: text, 
+                    is_article: isArticle,
+                    session_id: currentSessionId 
+                }),
+                signal: controller.signal
+            });
+
+            const data = await res.json();
+            const botDiv = document.getElementById(botId);
+            const fullText = (data.content || "").replace(/\\n/g, '\n');
+
+            let i = 0;
+            function type() {
+                if(i < fullText.length) {
+                    i += 5;
+                    botDiv.innerHTML = marked.parse(fullText.slice(0, i));
+                    scrollToBottom();
+                    setTimeout(type, 5);
+                } else {
+                    botDiv.innerHTML = marked.parse(fullText);
+                    const copyBtn = document.getElementById(`btn-${botId}`);
+                    copyBtn.classList.remove('hidden');
+                    copyBtn.onclick = () => copyText(fullText, copyBtn);
+                    
+                    if(data.image) { 
+                        botDiv.innerHTML += `<img src="${data.image}" class="mt-3 rounded-lg w-full">`;
+                        scrollToBottom();
+                    }
+                    resetUI();
+                }
+            }
+            type();
+
+        } catch(e) { 
+            console.error(e);
+            resetUI(); 
+        }
+    }
+
+    function resetUI() {
+        document.getElementById('send-btn').classList.remove('hidden');
+        document.getElementById('stop-btn').classList.add('hidden');
+    }
+
+    function stopGeneration() { if(controller) controller.abort(); resetUI(); }
+</script>
+</body>
+</html>

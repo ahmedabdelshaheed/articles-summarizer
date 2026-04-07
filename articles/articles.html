@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9 Articles Grid - Copy Only</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 { color: #212529; margin-bottom: 40px; }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            max-width: 1100px;
+            width: 100%;
+        }
+
+        @media (max-width: 900px) { .grid-container { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 600px) { .grid-container { grid-template-columns: 1fr; } }
+
+        .article-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 30px 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border: 1px solid #eee;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .article-card:hover { transform: translateY(-5px); }
+
+        .article-card h3 {
+            margin: 0 0 20px 0;
+            color: #007bff;
+            text-transform: uppercase;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+        }
+
+        /* هذا الجزء يخفي نص المقال تماماً من الشاشة */
+        .article-text {
+            display: none;
+        }
+
+        .copy-btn {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+            transition: background 0.2s;
+        }
+
+        .copy-btn:hover { background-color: #0056b3; }
+        .copy-btn:active { background-color: #28a745; }
+    </style>
+</head>
+<body>
+
+    <h1>Articles Manager</h1>
+
+    <div class="grid-container">
+
+        <div class="article-card">
+            <h3> AFCON </h3>
+            <p id="text1" class="article-text"> Senegal parade AFCON trophy, despite title being awarded to Morocco
+Senegal parade AFCON trophy at Stade de France ahead of friendly against Peru, despite being stripped of the title.
+
+Senegal, who won the Africa Cup of Nations title in a controversial final against hosts Morocco in January – only to be stripped of their victory weeks later – have paraded the trophy ahead of a friendly against Peru at the Stade de France in Paris.
+
+Senegal captain Kalidou Koulibaly and his teammates came out onto the pitch with the AFCON trophy on Saturday for a lap of honour after a pre-match concert by Senegalese superstar Youssou N’Dour.
+
+Koulibaly and goalkeeper Edouard Mendy went up to the stadium’s presidential box to place the trophy there in front of Abdoulaye Fall, the president of the Senegalese Football Federation, among others.
+
+Only hours earlier, Morocco had declared the case for the trophy closed, following the Confederation of African Football (CAF) ruling that Senegal’s 1-0 win in January’s final was to be overturned following the mid-game walk-off by their players.
+
+CAF’s appeals panel awarded Morocco a 3-0 win and with it, the title.
+
+Senegal and Morocco set to remain locked in AFCON dispute
+Senegal have said they will take their own appeal back to CAF and to the Court of Arbitration for Sport (CAS), which could take a year to rule.
+
+The Senegalese government has called for an independent international inquiry into CAF’s decision, alleging corruption should also be looked into.
+
+Senegal’s players left the field in normal time during the final in protest at a penalty awarded to Morocco, which – upon the Senegalese return after a 14-minute delay – was missed.
+
+The match on the day was settled by Pape Gueye’s strike in extra time. Morocco immediately appealed the result, but were initially rebuffed by CAF.
+
+Senegal turn Paris into AFCON trophy celebration
+A crowd of 70,000 was expected for the match at 16:00 GMT on Saturday. Thousands of Senegalese supporters, sprinkled with Peruvian fans, were already in the Stade de France by the time the players showed off their trophy.
+
+Earlier, nearly 200 Senegal supporters gathered in front of the nearby Basilica of Saint-Denis before making their way to the Stade de France to the sound of traditional drums and percussion.
+
+Bally Bagayoko, the newly elected mayor of Saint-Denis, briefly joined the procession.
+
+“Welcome to Saint-Denis,” said the mayor. “I wanted to thank everyone who organised this wonderful initiative.
+
+“You are the pride of the residents of working-class neighbourhoods. We have often been discriminated against, often looked down upon.
+
+“You are showing that you are capable, at such an important moment, of coming together. Today, Africa is united. Everyone behind Senegal.”
+
+The friendly against Peru was due to be the Lions of Teranga’s first match since the Africa Cup of Nations final.
+
+They are preparing for the World Cup, where they have been pitted in a group with France, Norway and either Bolivia or Iraq.
+
+Their squad on Saturday was almost identical to the one that competed in the Africa Cup of Nations.
+
+ </p>
+            <button class="copy-btn" onclick="copyText('text1')">Copy Article</button>
+        </div>
+
+        <div class="article-card">
+            <h3> BONE SWALLOWER </h3>
+            <p id="text2" class="article-text"> Once known as a bird of ill omen, India's endangered hargila has gained an army of protectors. Now it's beginning to bounce back.
+
+On a bright, sweltering January afternoon in 2007, biologist Purnima Devi Barman found herself in Dadara village, on the banks of India's mighty Brahmaputra River in the northeastern state of Assam. Despite being surrounded by tropical evergreen forests and emerald wetlands, all she could think about was the monumental destruction she was witnessing.
+
+Local villagers had just hacked away at one of the tallest, most beautiful trees she had ever known – a local species of evergreen known as a kadamba. Now, amidst the tree's fallen branches, scattered leaves, twigs and thatches of nesting material lay large birds with black and white feathers, long limbs and sharp beaks, their dead bodies splayed on the ground.
+
+They were greater adjutant storks, one of Assam's most distinctive – and endangered – birds.
+
+A few chicks were still alive, and Barman had picked up a baby bird and held it close to her chest. "I could feel its heart beating, and I could sense its pain and suffering," she remembers. As a mother raising young twins, the baby bird's trauma affected her deeply.
+
+At the time, Barman was working towards a PhD in wildlife conservation, particularly studying the storks. But she knew that what she had just witnessed would change the course of her professional life. "I felt like I had to do something more than just observe these birds," she says. "They needed help."
+
+Known locally as the hargila (or "bone-swallower") for its scavenging ways, greater adjutant storks are unique birds. Roughly 5ft (1.5m) tall, they aren't only imposing but also play a vital role in maintaining the health of a wetland ecosystem. As scavengers that consume and clean up carcasses, they prevent the spread of disease and break down decaying organic matter, recycling essential nutrients back into the soil.
+
+Once abundant across Asia, today these birds can only be found in the northern Indian states of Assam and Bihar, as well as in pockets of Cambodia. The destruction of their nests and wetland habitats, human persecution such as hunting and egg collecting has severely impacted their population. The International Union for the Conservation of Nature (IUCN) classifies the bird as Near Threatened.
+
+For years, villagers in Assam considered the storks a nuisance and a symbol of bad luck. They were feared, reviled and in some communities, hunted for their meat which was once widely used in folk medicine as a cure for leprosy or antidote to poison. The storks' habit of nesting on private property and their messy droppings made the situation worse.
+
+Combined, these hurdles could have led greater adjutant storks to fade away completely, if it weren't for a group of local women, now numbering 20,000, who burst onto the scene and changed the fate of the storks. And while it continues to be a species of concern, persistent nurturing and conservation efforts have brought hope – and measurable success. In Assam, the birds have been spotted in eight regions and the IUCN estimates their numbers to be around 1,800, up from 450 birds in the state in 2007.
+
+The all-women Hargila Army
+For her doctoral research, Barman, who hails from Assam's Kamrup region, chose to study the greater adjutant stork's habits closely and observe their role in preserving the health of the wetlands. But after realising how hated, feared and endangered the birds were, she realised there was work to be done far beyond the science.
+
+She set out to change the hargila's fearsome reputation. To build empathy for the birds, she started with an image makeover – she spoke admiringly of the birds and insisted that they weren't ill-omened.
+
+She knew, though, she couldn't do it alone. In 2007, that same year she watched the kadamba tree be felled, she began going from village to village, home to home, speaking with the women in the community. Barman asked them to imagine how they would feel if their own babies were treated the same way as the hargila. For many, her calm reasoning struck a chord.
+
+Pratima Kalita Rajbongshi, a 35-year-old mother of two daughters, says she remembers a time when the villagers would gather and throw pebbles at the birds. In 2009, when her second child was six months old, she attended a meeting arranged by Barman.
+
+What they discussed made a deep impression on her. "Purnima ma'am said when our babies are sick, we take care of them, but we torture the bird and its babies. I just couldn't stop thinking about that. That was the day I decided to become an active member of the Hargila Army."
+
+Members of the Hargila Army placed birds at baby showers – traditional Assamese celebrations that function as a prayer for a pregnant woman's health and long life. Women in handmade bird costumes, with the hargila's enormous beak towering over their heads, began to dance at these ceremonies. The birds were soon associated with these joyous occasions.
+
+Barman began to form small community groups, seeking out women from the villages who could sew, paying them to weave the hargila's image onto hand woven sarees, cushion covers, quilts and shawls. Cooking competitions followed.
+
+In this way, the all-female conservation initiative started slowly, with just a few women in the earlier days, Barman says. But support for the hargila from local women soon grew and then began to snowball. Today, the Hargila Army includes 20,000 women from 47 villages – all of whom have signed a pledge to protect the bird, she says.
+
+Women were not previously active in public spaces, says Rajbongshi, but activities of the army attracted them and soon they began to use the hargila to express themselves in creative ways. "In protecting the birds, the local women found their own sense of identity and livelihoods too," she says.
+
+Lavita Baishya, a 41-year-old mother who lives in Dadara, joined the Hargila Army's community groups in 2017. "We were taught folk songs that told us how to respect the bird, even revere it," she says.
+
+It was also here among her peers that she discovered her love for sewing and embroidery. With the proceeds from her sewing, she eventually bought two sewing machines and opened her own tailoring centre in 2023, where she now trains other women, specialising in making hargila-themed textile merchandise. The Hargila Army now has a mobile cart that regularly sells themed merchandise door to door. There’s a retail outlet that opened in 2023 in Deepor Beel, a freshwater lake and wetland on the outskirts of Guwahati in Assam, and an online store. All proceeds from these sales go to the women.
+
+Like Baishya, there are now seven teachers, all experienced hands at sewing, who train the others. They also learn about the environment in these training sessions, says Barman. Sales of the merchandise boomed and so did local pride in the rare bird.
+
+In protecting the birds, the local women found their own sense of identity and livelihoods too – Pratima Kalita Rajbongshi
+One research paper found how this use of folklore, tradition, weaving skills and story-telling all helped foster community engagement and aided in conservation efforts in the area. Deepa Moni Doley, a researcher at the National Institute of Science Communication and Policy Research in New Delhi, points out how effective communication by Barman and the women in the community aided the movement as well. Barman's work to protect the storks has become so well known that she was named one of Time magazine's women of the year in 2025.
+
+"Magic happened when we began to involve the communities of women," Barman says. "The men soon changed their attitude toward the hargila too."
+
+Susan C Gardner, director of the ecosystems division of the UN Environment Programme in Nairobi, Kenya, says that the Hargila Army's conservation efforts have seen success because it deeply linked strong grassroots activism with a community's needs. "This is truly a model of community engagement in which the local women gain economic opportunities through the conservation of endangered species," says Gardner.
+
+This economic benefit helps to ensure that these efforts will last, she says. Today, Barman's twin daughters are involved in conservation efforts as well, publishing a newsletter about the women's activities named The Hargila Desk.
+
+In spite of the army's successes, though, many challenges lie ahead. One concern is the many development projects which have in recent years encroached into wetlands ecosystems, changing the landscape and threatening biodiversity.
+
+Preserving the hargila's nesting sites is another formidable task. Assam's towering silk cotton trees, specifically the species Bombax ceiba, are perfect to accommodate these large birds, but the trees in public spaces are dwindling, exploited for their timber and to make way for buildings. Local reports say illegal timber mills are flourishing, but locals complain that these mills cut trees indiscriminately, without a licence and leading to widespread deforestation.
+
+To complicate matters further, the hargila are colonial nesters, building their nests together in groups, meaning that the thinning of trees can critically affect their roosting sites.
+
+"Any pledge to save the hargila is a pledge to save its trees. But the biggest challenge is that today, many of the remaining trees are on private lands," Barman says. It means that public awareness of the birds' plight and community engagement remains critical, she says.
+
+Another favourite nesting site of hargilas are kadamba trees, such as the one Barman witnessed being destroyed. An evergreen tree native to India, the kadamba is known for its lush canopy and fragrant yellowish-orange blooms, each a perfect spherical shape. In Hindu mythology, these flowers are associated with Lord Krishna, symbolising love, devotion and spiritual growth. It's not just hargilas which are in need of protection, but the tree too – something Barman is convinced an all-women army can achieve.
+
+"The first step to making a difference is to raise your voice," Barman says. "When women come together, we've shown that we have the power to protect anything."
+
+--
+
+For essential climate news and hopeful developments to your inbox, sign up to the Future Earth newsletter, while The Essential List delivers a handpicked selection of features and insights twice a week. 
+
+ </p>
+            <button class="copy-btn" onclick="copyText('text2')">Copy Article</button>
+        </div>
+
+        <div class="article-card">
+            <h3> GEN Z </h3>
+            <p id="text3" class="article-text"> van Fry was born in 2003, a point in human history when many people’s back pockets held a Nokia 1100 or the Sony Ericsson T610. Mobile phones had been displaying the time on their LCD screens for almost a decade by this point — and the anxiety of how they might replace the traditional wrist watch was already in full swing. “Many young people see them as obsolete as sundials,” read one 2005 newspaper article. “For them, cell phones are the new watches.”
+
+Throughout his life, the time has been available to Fry on iPhone screens, laptops, TVs, electric ovens, central heating systems, Nintendo DS’s and even beamed eeriely through bathroom mirrors. Which makes it all the more interesting that Fry has collected more than 35 watches, averaging between $1,000 and $2,000 a piece. So far, his prized possession is a Tag Heuer Carrera — a silver linked piece with a deep magenta bezel which he bought for around $3,500. One day, Fry hopes to have a H Moser on his wrist, though some models retail for roughly around $50,000. He’s already tried on his favorite, featuring a vanta black dial and no indexes, in the shop. “It’s just to die for,” he said.
+
+Aged 22, Fry is part of a growing Gen Z cohort of watch lovers. According to secondhand luxury watch retailer Bezel, those under 30 account for a third of the company’s transactions. This group has been previously underestimated by legacy brands, said Bezel’s CEO Quaid Walker. “I think the watch world is just starting to really pay attention to younger demographics,” he told CNN. According to Walker, the Gen Z market are the ones on average spending the most on a single watch purchase.
+
+Longines, the storied luxury Swiss watchmaker, has also noticed an uptick in younger customers — particularly in those looking to restore or service older pieces. Thiago Abrantes, an assistant manager in London, said around 50% of those he encountered at the city’s flagship store looking to service a watch were under 30. He put it down to inheritance. “A lot of people get a watch from dad as a gift,” he said.
+
+Although his friends are catching on, Fry’s level of enthusiasm for watches means he is still “an outlier” amongst his peers. He makes YouTube videos from his home in Utah discussing his latest obsession and new releases from brands. He also gives virtual tours of his formidable vintage collection, which includes pieces from the ‘60s, ‘70s and even a Zenith pocket watch from last century. His interest, he says, is partly down to a curiosity in our cultural history. “They were a real companion in someone’s life, and because of their necessity they had to be used every single day,” Fry said in a phone call. “There’s something deeply fascinating and almost sacred about holding and owning a piece that has gone through so much.”
+
+That same sense of nostalgia could be driving design preferences, too. According to data collected in 2025 by luxury watch resale marketplace Chrono24, Gen Z buy more classic dress watches than any other age demographic. The number of timepieces in this style — slim, formal with simple dials in gold, silver and often with a leather strap, like the Cartier Tank Louis Cartier, the Vacheron Constantin Patrimony or a vintage Seiko — bought by those aged between 14 and 28 has risen 44% since 2018. “It anchors onto a time when things were collected, or made to last,” said Walker.
+
+Dahyn Lee, owner of the online vintage watch shop Teia Collective, says that over 45% of her 10,000 followers on Instagram are Gen Z. “They grew up in this highly digital enviroment… It seems to me that it only intensified their desire for tactile and tangible objects,” she said. Once a month Lee sells her collection, sourced through a mix of antique fairs, eBay and relationships cultivated with Japanese sellers, at vintage markets in London. With prices ranging from $60 to $460, these are entry-level purchases. She said teenagers will often approach her stall and choose a piece because “this is just like what my grandma used to wear.”
+
+“I think it almost works as a connection to the past,” Lee said. “They can feel nostalgic for a time when they didn’t even exist.”
+
+Gendered watches? A waste of time
+Lee’s customers are also “obsessed” with dainty ladies watches — no matter their gender. “I’ve sold quite a lot of what is categorized as women’s watches to guys,” she said. “And then there are girls who ask for men’s watches as well.” Fry also owns a number of timepieces originally designed for women. “I wasn’t brave enough to start wearing smaller, more feminine pieces until Timothée Chalamet wore that Cartier Panthère,” he said, referencing Chalamet’s 2024 “Dune: Part II” red carpet look in Mexico City. “Especially because he and I have very similar physiques. It was just that initial spark.”
+
+Abrantes echoes that celebrity influence is huge in the watch world — especially for those starting out and figuring out their taste — giving younger customers permission to buck trends, discover independent brands and break convention. After the Academy Awards, which saw A-listers such as Hudson Williams, Michael B. Jordan, Shaboozey and Pedro Pascal experiment with smaller, more feminine styles, Abrantes had customers coming into Longines with screenshots from the red carpet looking for similar pieces. “People come in and try it on for curiosity. Sometimes they buy, sometimes they don’t,” he said.
+
+“We have the same experience,” said Walker, whose app Bezel pairs customers with an in-house watch expert who can provide research, advice and purchase suggestions on request. “Folks will say, ‘I’m buying my first watch,’ and they’ll show us a photo of someone on the (red) carpet wearing something interesting,” he added. This concierge service can alert younger shoppers to lesser known names, deepening brand knowledge outside of stereotypical big hitters like Rolex or Patek Phillippe. “It’s not just ‘I want to collect this watch because everyone else collects this watch,’” Walker said. “It’s actually an inversion of that.”
+
+Lee says her shoppers are even more keen to prioritise design over specific brand cache — or sometimes in her experience, even function. “I see my customers as predominantly people who love beautiful things, rather than people who are obsessed with watches,” she said. “All of my watches listed on my website are working, but then sometimes when I see something very special in terms of design, I do collect and sell it at the market,” Lee added. “Some customers really don’t mind a watch not working because they actually want a bracelet. I think that is very characteristic of Gen Z.” It’s often more about “the look,” she says.
+
+Sometimes, a 14 or 15 year old — birth year: circa 2011, reigning mobile phone design: iPhone 4 — bounds up to her stall excitedly, about to buy a piece. “And then they tell their friends, ‘I don’t even know how to read time.’” </p>
+            <button class="copy-btn" onclick="copyText('text3')">Copy Article</button>
+        </div>
+
+        <div class="article-card">
+            <h3> HELIUM HITCH </h3>
+            <p id="text4" class="article-text"> Helium hitch: Why US-Israel war on Iran could cause MRI scan delays
+Shortage of helium will have ripple effects across medical and other industries — impacting MRI scanners, semiconductors and more.
+
+The United States-Israel war on Iran, and Tehran’s response, have disrupted about one-third of global supplies of helium, which is critical for medical uses such as MRI scans, as well as in high-tech industries such as the semiconductor sector.
+
+This is largely due to shipping restrictions and the halt of production by a chief helium producer, Qatar.
+
+How much helium is produced in the Gulf?
+In 2025, Qatar produced about 63 million cubic metres of helium, constituting a third of the roughly 190 million cubic metres of helium produced globally, according to the US Geological Survey.
+
+While other Gulf countries are not chief producers of helium, they are critical to the global supply chain because exports from Qatar and elsewhere depend on shipping lanes and chokepoints in their coastal waters, especially the Strait of Hormuz.
+
+On March 2, Ebrahim Jabari, a senior adviser to the commander-in-chief of Iran’s Islamic Revolutionary Guard Corps (IRGC), announced that the strait was “closed” and if any vessels tried to cross it, the IRGC and the navy would “set those ships ablaze”. Since then, shipping through the strait has been significantly reduced.
+
+Iranian officials have insisted that the strait is not completely closed – except to ships belonging to the US, Israel and those who collaborate with them – but have also laid down new ground rules: Any vessel must secure Tehran’s approval to transit through the narrow waterway. As a result, traffic through the strait has ground almost to a halt, barring a few Indian, Pakistani and Chinese ships.
+
+QatarEnergy, the world’s largest LNG producer whose plants also generate liquid helium, said annual exports of the cooling element would drop by 14 percent each year.
+
+How is it transported to buyers?
+A very low-density gas, helium takes up a lot of space in gas form. Hence, it is typically cooled to liquid form and stored in specialised cryogenic containers. This saves space and is more cost-effective.
+
+Helium typically has to be transported within 45 days of being liquified, because even well‑insulated tanks gradually warm up, causing the helium to boil off, build pressure and revert to gas that escapes containers and into the atmosphere.
+
+In Qatar, these helium containers are shipped to buyers in containers by sea.
+
+Virtually all of Qatar’s exported helium normally leaves the country by ship through the Strait of Hormuz, because Qatar’s production is on the Gulf and there is no alternative maritime outlet.
+
+Why has helium production been disrupted in the Gulf?
+Helium is extracted as a by-product during the production of LNG. Hence, any disruptions to the production of LNG inadvertently cut helium supply.
+
+LNG production has been affected in Qatar due to attacks on its energy infrastructure.
+
+Qatar’s state-run energy firm QatarEnergy announced on March 2 that it had halted LNG production following Iranian attacks on its operational facilities in Ras Laffan and Mesaieed in Qatar. Iranian officials publicly denied targeting QatarEnergy.
+
+Last week, Iranian state media reported that natural gas facilities associated with the South Pars gasfield had been attacked.
+
+Hours later, Iranian missiles struck an LNG facility at Ras Laffan Industrial City, which processes approximately 20 percent of the global supplies of LNG, in northern Qatar.
+
+The attack caused three fires and wiped out about ⁠17 percent of Qatar’s LNG export capacity, causing an estimated $20bn in lost annual revenue for the next five years, QatarEnergy’s CEO, Saad Sherida Al-Kaabi, told the Reuters news agency.
+
+Repairs will sideline 12.8 million tonnes of LNG production per year for three to five years, he said.
+
+That decline in LNG production is why QatarEnergy has announced a 14 percent cut in exports of liquid helium.
+
+Which countries depend the most on helium supplies from the Gulf?
+South Korea, Japan, Taiwan and China are the biggest consumers of helium from Qatar.
+
+Most supply is sold through long-term contracts rather than a transparent spot market, meaning price changes may not be felt immediately.
+
+But supplies will still tighten, as exports from Qatar drop.
+
+Aleksandr Romanenko, CEO of market research firm IndexBox, told Reuters that a 30-day disruption could lift delivered spot helium prices by 10 percent to 20 percent, while a 60-to-90-day outage could push prices higher by 25 percent to 50 percent, particularly for buyers without long-term supply contracts.
+
+Last week, South Korea’s governing party lawmaker Kim Young-bae warned the US-Israel war on Iran could disrupt supplies of key semiconductor manufacturing materials, giving helium as one example.
+
+Why is helium so important?
+No other element can be cooled to temperatures as low as helium, down to just a fraction below absolute zero or 0 Kelvin, the lowest temperature possible.
+
+That quality makes helium unique for a range of purposes in high-tech industries. It remains in liquid form at extremely low temperatures and so serves as a warning system against leaks.
+
+Helium is also chemically inert – it does not react with other chemicals. That makes it perfect as a cooling agent because it does not contaminate chips or other materials with which it comes in contact.
+
+These qualities also make it ideal for cooling superconducting magnets, reducing their electrical resistance to near zero.
+
+What is it used for?
+These properties mean that liquid helium has long been an essential component in running Magnetic Resonance Imaging (MRI) machines.
+
+MRI machines use superconducting magnets that heat up and need to be cooled. Helium cooling allows the magnets to generate magnetic fields powerful enough to create clear images of the inside of the human body.
+
+About a quarter of the helium used worldwide is used for the cooling of superconducting magnets, and demand is on the rise, according to the German engineering group Siemens.
+
+Additionally, helium is used in the production of semiconductor chips. Semiconductors are special materials, usually silicon-based, used to make the chips that power almost all modern electronics, from smartphones and cars to data centres and military systems.
+
+Helium is also used to fill party balloons, weather balloons, and some airships because it’s lighter than air and nonflammable.
+
+What will happen if countries cannot get helium?
+Helium does not have an artificial substitute. Hence, a helium shortage would create a gap in technological advancement.
+
+But this isn’t a new threat.
+
+The crisis started by the war on Iran and the closure of the Strait of Hormuz is the fifth occasion since 2006 when the world has grappled with a helium supply shortage.
+
+The medical industry, in particular, has been attempting to adapt. In 2002, Chinese researchers announced that they had developed a new technology that could allow for helium-free MRI scanners, using a new, super-cold material.
+
+Separately, researchers have developed MRI machines that can recycle helium, thereby reducing their consumption of it.
+
+Still, for now, most MRI machines around the world rely on liquid helium.
+
+Who else produces helium, and can they increase production easily?
+The US is the largest producer of helium worldwide, producing 81 million cubic metres – more than 40 percent of global supplies.
+
+Texas-headquartered Exxon Mobil is the largest helium producer outside Qatar, while Canada-based North American Helium and smaller developers such as Helix Exploration and Blue Star Helium could see stronger demand, Anish Kapadia, CEO of market research firm AKAP Energy, told Reuters.
+
+But despite this production, North American consumers also depend on Gulf helium.
+
+Airgas, a subsidiary of French industrial gases group Air Liquide that is among the largest distributors of helium in the US, declared force majeure last week, announcing that it was cutting its shipments of the gas by half.
+
+Air Liquide, its parent company, announced last week that it was planning to reallocate its helium supply chain to access the gas from other regions. The announcement was made during the opening of a new advanced materials factory in Taichung, Taiwan. Air Liquide said it relied on multiple sources in different continents and on its storage cavern in Europe.
+
+ </p>
+            <button class="copy-btn" onclick="copyText('text4')">Copy Article</button>
+        </div>
+
+        <div class="article-card">
+            <h3> IRAN </h3>
+            <p id="text5" class="article-text"> As war rages, Iranian politicians push for exit from nuclear weapons treaty
+While US-Israeli attacks hit key infrastructure, hardliners demand withdrawal from Nuclear Non-Proliferation Treaty.
+
+Tehran, Iran – Iranian politicians are pushing to exit the country from the Treaty on the Non-Proliferation of Nuclear Weapons (NPT) as the United States and Israel ramp up their attacks to hit civilian nuclear sites, steel factories and a university.
+
+It would be meaningless for Iran to remain a signatory to the international treaty as it “has had no benefit for us”, said Ebrahim Rezaei, spokesman for the national security commission of parliament, in a Friday night post on X.
+
+Malek Shariati, a representative from Tehran, said that a priority piece of legislation has been uploaded in an online parliamentary portal and will be reviewed soon.
+
+Politicians have not held any sessions since the start of the war on February 28.
+
+According to Shariati, the legislation will withdraw Iran from the NPT, revoke a law that adopted nuclear restrictions linked with a now-defunct 2015 nuclear deal with world powers, and “support a new international treaty with aligned countries [including Shanghai Cooperation Organization/BRICS] on developing peaceful nuclear technologies”.
+
+Hardliners have previously demanded an NPT exit and a nuclear bomb in response to outside pressure.
+
+If such a law is approved by the parliament, it would also have to be agreed by the Guardian Council – a powerful 12-member constitutional body, before being implemented by the government.
+
+Iranian authorities continue to accuse the International Atomic Energy Agency (IAEA) of taking a politicised stance and being complicit in attacks against Iranian nuclear sites, charges the United Nations nuclear watchdog rejects.
+
+Mohammad Mohkber, a senior adviser to the late Supreme Leader Ayatollah Ali Khamenei and a former first vice president under late President Ebrahim Raisi, said on Saturday that IAEA Director Rafael Grossi is a “partner in crime” in blood spilled during the current war and the 12-day war last June.
+
+“His political reports about Iran’s peaceful nuclear activities, lack of condemnation for aggression against our nuclear facilities, and now encouraging the enemies to attack Iran’s nuclear sites, will bring the country to irrevocable decisions,” he warned, without elaborating.
+
+Grossi told US broadcaster CBS News in an interview earlier this month that no war has the capability to totally destroy Iran’s nuclear programme, “unless it was nuclear war and you go for destruction unfathomable, which we hope will never be the case”.
+
+Fada-Hossein Maleki, a member of the national security commission of Iran’s parliament, said on Saturday he believes that Grossi has acted as an “agitator” for months in order to please US President Donald Trump. He said the nuclear bomb comment “violates all international norms and constitutes a provocative act”.
+
+Electricity, steel become targets
+Israeli and US forces significantly intensified their attacks on Friday, in some cases destroying infrastructure that will have long-term repercussions for Iranians and the country’s beleaguered economy that is struggling with an energy crisis and inflation rates of about 70 percent.
+
+Warplanes bombed a yellowcake facility in Yazd and the Khondab Heavy Water Complex near Arak, and so far, at least three projectiles have landed in the vicinity of the Bushehr Nuclear Power Plant, prompting IAEA warnings about the potential for a major radiological incident.
+
+Heavy air strikes also pummelled Iran’s steel giants, namely the Mobarakeh complex in central Isfahan, and the Khuzestan complex in western Ahvaz. Production lines and power plants feeding them were targeted, prompting the Ahvaz complex to announce suspension of production until further notice on Saturday.
+
+The companies form the backbone of Iran’s non-oil exports, and were projected to rack up billions of dollars in revenue at a time when Washington is also trying to choke off Iran’s oil exports. Thousands of jobs may be at stake after major damage to the sites.
+
+The bombing came after Trump twice announced delays on launching destructive attacks against Iran’s power plants, which he said would last until April 6. He has also claimed that negotiations with Iran “are going very well” as the two sides present conflicting positions.
+
+Tehran has undergone two of its most intense nights of bombing, with overnight strikes into Saturday lighting up the night sky orange and also leading to temporary power outages across multiple areas. Some citizens reported smelling strong odours left from the detonation of the powerful explosives in the morning in some areas.
+
+But almost the entirety of Iran’s population of at least 90 million has been unable for one month to freely communicate its experience with the international community since the Islamic republic has completely blocked internet connectivity. Only an intranet is operational to offer some basic services and limit the flow of information to state-run outlets.
+
+The internet was totally cut off for 20 days in January, when thousands of protesters were killed during nationwide demonstrations that the government blamed on “terrorists” backed by the US and Israel. The streets of Tehran and many cities across Iran are now filled with armed state forces who have strictly warned against further protests.
+
+State media outlets also continue to release videos of “confessions” from Iranians, including one on Saturday showing a crying girl with a blurred-out face, who said she was apprehended after filming missile strikes from the window of her family home and sending the footage to foreign-based media.
+
+According to videos circulating online and state media reports, one of the strikes that targeted the Iranian capital overnight was directed at the Iran University of Science and Technology.
+
+Some reports said a centre carrying out satellite-related research activities was bombed, but the university only said “research and educational buildings” were attacked, which also disturbed civilians in nearby residential areas and a hospital, but inflicted no casualties.
+
+More major air strikes have been reported over the past day in Karaj and Shahr-e Rey near Tehran, as well as in Yazd, Shiraz, Tabriz, Bushehr and a number of other cities.
+
+ </p>
+            <button class="copy-btn" onclick="copyText('text5')">Copy Article</button>
+        </div>
+
+        <div class="article-card">
+            <h3> LLMs </h3>
+            <p id="text6" class="article-text"> create facebook post about LLMs </p>
+            <button class="copy-btn" onclick="copyText('text6')">Copy Article</button>
+        </div>
+
+        <div class="article-card">
+            <h3> MARS </h3>
+            <p id="text7" class="article-text"> Exploring Mars
+It is thought that Mars, our nearest planetary neighbor, will supply a number of
+answers to the questions we still have about the formation of the solar system, Earth’s
+geology and atmosphere, and possibly the origins of life. Any conclusive evidence we
+find of the presence of life elsewhere in the universe will have very great scientific and
+social consequences.
+Scientists want to prepare the way for human exploration in a foreseeable future. And
+they would like to answer the most intriguing question of all: is there, or was there
+ever, life on Mars?
+Since the surface of planet Mars is most likely sterile due to high levels of radiation,
+surveys for traces of life forms and fossils will be done below the surface, in areas
+protected from radiation. Some scientists also hope to find ice or permafrost under the
+surface.
+The Environment of Mars
+Although Mars has an atmosphere, it is unfriendly toward life as we know it on Earth.
+Mars is smaller than Earth in diameter; this results in a lower force of gravity - only
+about 1/3 of the gravity of Earth.. If you weigh 150 lbs on Earth you will only tip the
+scales at about 50 lbs. on Mars … with no dieting! Partly as a result of the limited
+gravity on Mars much of the atmosphere of Mars has drifted away. With little
+atmosphere, and no ozone layer, there is less protection from the ultraviolet (UV)
+radiation of the sun, which is very harmful to life. This is similar to situations on Earth
+when living things are exposed to high concentrations of UV rays which produce
+"sunburn"; this is of greater concern in areas where there is a "hole" in the ozone layer,
+allowing increased levels of UV penetration to the surface.
+
+Although the length of the Martian day (24 hours and 37 minutes) and the tilt of its
+axis (25 degrees) are similar to those on Earth (24 hours and 23.5 degrees, respectively),
+the orbit of that planet around the Sun takes almost twice as long as Earth. As a result,
+a Martian year is about twice as long as an Earth year and the seasons are each twice
+as long as those on Earth. 
+
+The atmosphere is composed mainly of carbon dioxide (95.3%), nitrogen (2.7%), and
+argon (1.6%), with small amounts of other gases. Oxygen, which is so important to us
+on earth, makes up only 0.13% of the atmosphere at Mars and there is only one-fourth
+as much water vapor in the atmosphere.
+Component Earth* Mars*
+Carbon Dioxide 0.038% 95.3%
+Nitrogen 78% 2.7%
+Oxygen 21% 0.13%
+Oxygen (Argon) 0.93% 1.6%
+Water Vapor 1.0% 0.25%
+*figures may not add up to 100% due to rounding.
+This means that the temperature at the surface is very cold. Surface temperatures
+range from -113°C at the winter pole to above 0°C at the equator on the dayside
+during summer. The surface pressure averages about 1/100th that at the surface of the
+Earth.
+
+In previous years in the TomatosphereTM Project (2009) the tomato seeds used in the
+experiment were subjected to a simulation of the Martian surface environment for a
+period of one week. The temperature in the simulator was approximately -50°C, with a
+95% concentration of CO2 and an increased intensity of ultraviolet light, similar to that
+found on the surface of Mars. The pressure in the simulator was 0.6 kilopascals (kPa),
+compared to Earth which averages 101.32 kPa. This exposure simulated a situation
+whereby the seeds were “left outside” on the surface of Mars.</p>
+            <button class="copy-btn" onclick="copyText('text7')">Copy Article</button>
+        </div>
+
+        <div class="article-card">
+            <h3> MIND </h3>
+            <p id="text8" class="article-text">Justin Rosenstein had tweaked his laptop’s operating system to block Reddit, banned himself from Snapchat, which he compares to heroin, and imposed limits on his use of Facebook. But even that wasn’t enough. In August, the 34-year-old tech executive took a more radical step to restrict his use of social media and other addictive technologies.
+
+Rosenstein purchased a new iPhone and instructed his assistant to set up a parental-control feature to prevent him from downloading any apps.
+
+He was particularly aware of the allure of Facebook “likes”, which he describes as “bright dings of pseudo-pleasure” that can be as hollow as they are seductive. And Rosenstein should know: he was the Facebook engineer who created the “like” button in the first place.
+
+A decade after he stayed up all night coding a prototype of what was then called an “awesome” button, Rosenstein belongs to a small but growing band of Silicon Valley heretics who complain about the rise of the so-called “attention economy”: an internet shaped around the demands of an advertising economy.
+
+These refuseniks are rarely founders or chief executives, who have little incentive to deviate from the mantra that their companies are making the world a better place. Instead, they tend to have worked a rung or two down the corporate ladder: designers, engineers and product managers who, like Rosenstein, several years ago put in place the building blocks of a digital world from which they are now trying to disentangle themselves. “It is very common,” Rosenstein says, “for humans to develop things with the best of intentions and for them to have unintended, negative consequences.”
+
+Rosenstein, who also helped create Gchat during a stint at Google, and now leads a San Francisco-based company that improves office productivity, appears most concerned about the psychological effects on people who, research shows, touch, swipe or tap their phone 2,617 times a day.
+
+There is growing concern that as well as addicting users, technology is contributing toward so-called “continuous partial attention”, severely limiting people’s ability to focus, and possibly lowering IQ. One recent study showed that the mere presence of smartphones damages cognitive capacity – even when the device is turned off. “Everyone is distracted,” Rosenstein says. “All of the time.”
+
+It is very common for humans to develop things with the best of intentions that have unintended, negative consequences
+Justin Rosenstein, creator of the 'like' button
+But those concerns are trivial compared with the devastating impact upon the political system that some of Rosenstein’s peers believe can be attributed to the rise of social media and the attention-based market that drives it.
+
+
+Drawing a straight line between addiction to social media and political earthquakes like Brexit and the rise of Donald Trump, they contend that digital forces have completely upended the political system and, left unchecked, could even render democracy as we know it obsolete.
+
+In 2007, Rosenstein was one of a small group of Facebook employees who decided to create a path of least resistance – a single click – to “send little bits of positivity” across the platform. Facebook’s “like” feature was, Rosenstein says, “wildly” successful: engagement soared as people enjoyed the short-term boost they got from giving or receiving social affirmation, while Facebook harvested valuable data about the preferences of users that could be sold to advertisers. The idea was soon copied by Twitter, with its heart-shaped “likes” (previously star-shaped “favourites”), Instagram, and countless other apps and websites.
+
+It was Rosenstein’s colleague, Leah Pearlman, then a product manager at Facebook and on the team that created the Facebook “like”, who announced the feature in a 2009 blogpost. Now 35 and an illustrator, Pearlman confirmed via email that she, too, has grown disaffected with Facebook “likes” and other addictive feedback loops. She has installed a web browser plug-in to eradicate her Facebook news feed, and hired a social media manager to monitor her Facebook page so that she doesn’t have to.
+
+“One reason I think it is particularly important for us to talk about this now is that we may be the last generation that can remember life before,” Rosenstein says. It may or may not be relevant that Rosenstein, Pearlman and most of the tech insiders questioning today’s attention economy are in their 30s, members of the last generation that can remember a world in which telephones were plugged into walls.
+
+It is revealing that many of these younger technologists are weaning themselves off their own products, sending their children to elite Silicon Valley schools where iPhones, iPads and even laptops are banned. They appear to be abiding by a Biggie Smalls lyric from their own youth about the perils of dealing crack cocaine: never get high on your own supply.
+
+One morning in April this year, designers, programmers and tech entrepreneurs from across the world gathered at a conference centre on the shore of the San Francisco Bay. They had each paid up to $1,700 to learn how to manipulate people into habitual use of their products, on a course curated by conference organiser Nir Eyal.
+
+Eyal, 39, the author of Hooked: How to Build Habit-Forming Products, has spent several years consulting for the tech industry, teaching techniques he developed by closely studying how the Silicon Valley giants operate.
+
+“The technologies we use have turned into compulsions, if not full-fledged addictions,” Eyal writes. “It’s the impulse to check a message notification. It’s the pull to visit YouTube, Facebook, or Twitter for just a few minutes, only to find yourself still tapping and scrolling an hour later.” None of this is an accident, he writes. It is all “just as their designers intended”.
+
+He explains the subtle psychological tricks that can be used to make people develop habits, such as varying the rewards people receive to create “a craving”, or exploiting negative emotions that can act as “triggers”. “Feelings of boredom, loneliness, frustration, confusion and indecisiveness often instigate a slight pain or irritation and prompt an almost instantaneous and often mindless action to quell the negative sensation,” Eyal writes.
+
+Attendees of the 2017 Habit Summit might have been surprised when Eyal walked on stage to announce that this year’s keynote speech was about “something a little different”. He wanted to address the growing concern that technological manipulation was somehow harmful or immoral. He told his audience that they should be careful not to abuse persuasive design, and wary of crossing a line into coercion.
+
+But he was defensive of the techniques he teaches, and dismissive of those who compare tech addiction to drugs. “We’re not freebasing Facebook and injecting Instagram here,” he said. He flashed up a slide of a shelf filled with sugary baked goods. “Just as we shouldn’t blame the baker for making such delicious treats, we can’t blame tech makers for making their products so good we want to use them,” he said. “Of course that’s what tech companies will do. And frankly: do we want it any other way?”
+
+We’re not freebasing Facebook and injecting Instagram here
+Nir Eyal, tech consultant
+Without irony, Eyal finished his talk with some personal tips for resisting the lure of technology. He told his audience he uses a Chrome extension, called DF YouTube, “which scrubs out a lot of those external triggers” he writes about in his book, and recommended an app called Pocket Points that “rewards you for staying off your phone when you need to focus”.
+
+Finally, Eyal confided the lengths he goes to protect his own family. He has installed in his house an outlet timer connected to a router that cuts off access to the internet at a set time every day. “The idea is to remember that we are not powerless,” he said. “We are in control.”
+
+But are we? If the people who built these technologies are taking such radical steps to wean themselves free, can the rest of us reasonably be expected to exercise our free will?
+
+Not according to Tristan Harris, a 33-year-old former Google employee turned vocal critic of the tech industry. “All of us are jacked into this system,” he says. “All of our minds can be hijacked. Our choices are not as free as we think they are.”
+
+Harris, who has been branded “the closest thing Silicon Valley has to a conscience”, insists that billions of people have little choice over whether they use these now ubiquitous technologies, and are largely unaware of the invisible ways in which a small number of people in Silicon Valley are shaping their lives.
+
+A graduate of Stanford University, Harris studied under BJ Fogg, a behavioural psychologist revered in tech circles for mastering the ways technological design can be used to persuade people. Many of his students, including Eyal, have gone on to prosperous careers in Silicon Valley.
+
+Harris is the student who went rogue; a whistleblower of sorts, he is lifting the curtain on the vast powers accumulated by technology companies and the ways they are using that influence. “A handful of people, working at a handful of technology companies, through their choices will steer what a billion people are thinking today,” he said at a recent TED talk in Vancouver.
+
+“I don’t know a more urgent problem than this,” Harris says. “It’s changing our democracy, and it’s changing our ability to have the conversations and relationships that we want with each other.” Harris went public – giving talks, writing papers, meeting lawmakers and campaigning for reform after three years struggling to effect change inside Google’s Mountain View headquarters.
+
+It all began in 2013, when he was working as a product manager at Google, and circulated a thought-provoking memo, A Call To Minimise Distraction & Respect Users’ Attention, to 10 close colleagues. It struck a chord, spreading to some 5,000 Google employees, including senior executives who rewarded Harris with an impressive-sounding new job: he was to be Google’s in-house design ethicist and product philosopher.
+
+Looking back, Harris sees that he was promoted into a marginal role. “I didn’t have a social support structure at all,” he says. Still, he adds: “I got to sit in a corner and think and read and understand.”
+
+He explored how LinkedIn exploits a need for social reciprocity to widen its network; how YouTube and Netflix autoplay videos and next episodes, depriving users of a choice about whether or not they want to keep watching; how Snapchat created its addictive Snapstreaks feature, encouraging near-constant communication between its mostly teenage users.
+
+I have two kids and I regret every minute that I’m not paying attention to them because my smartphone has sucked me in
+Loren Brichter, app designer
+The techniques these companies use are not always generic: they can be algorithmically tailored to each person. An internal Facebook report leaked this year, for example, revealed that the company can identify when teens feel “insecure”, “worthless” and “need a confidence boost”. Such granular information, Harris adds, is “a perfect model of what buttons you can push in a particular person”.
+
+Tech companies can exploit such vulnerabilities to keep people hooked; manipulating, for example, when people receive “likes” for their posts, ensuring they arrive when an individual is likely to feel vulnerable, or in need of approval, or maybe just bored. And the very same techniques can be sold to the highest bidder. “There’s no ethics,” he says. A company paying Facebook to use its levers of persuasion could be a car business targeting tailored advertisements to different types of users who want a new vehicle. Or it could be a Moscow-based troll farm seeking to turn voters in a swing county in Wisconsin.
+
+Harris believes that tech companies never deliberately set out to make their products addictive. They were responding to the incentives of an advertising economy, experimenting with techniques that might capture people’s attention, even stumbling across highly effective design by accident.</p>
+            <button class="copy-btn" onclick="copyText('text8')">Copy Article</button>
+        </div>
+
+        <div class="article-card">
+            <h3> NOBEL PRIZE </h3>
+            <p id="text9" class="article-text">Chilean architect Smiljan Radić, whose often-experimental designs include a doughnut-shaped pavilion in London and a restaurant held up by boulders in Santiago, was named the winner of this year’s Pritzker Prize — an award often dubbed the field’s equivalent to a Nobel Prize — on Thursday.
+
+While the 60-year-old’s designs may, at first glance, appear precariously engineered or even unfinished, the award’s jury said they uplifted those who enter, calling his work “optimistic and quietly joyful.”
+
+Radić becomes the fifth Latin American architect to win the prestigious prize in its 47-year history. First presented to modernist pioneer Philip Johnson in 1979, the annual award has since honored many of the profession’s most influential figures, including the late Zaha Hadid, Norman Foster and Rem Koolhaas. But recent years have seen juries acknowledge lesser-known architects and figures committed to smaller-scale, or socially-minded, designs.
+
+Founded in 1995, Radić’s eponymous firm has completed over 60 projects spanning housing, arts venues, an award-winning winery and even a bus stop shelter in Austria. But while he has worked across the Americas and Europe, most of the architect’s buildings were completed in his native Chile.
+
+Among the most notable is Teatro del Bíobío, a performing arts venue in the city of Concepción that, by night, radiates warm light through a semi-translucent facade like a paper lantern. He also oversaw a seamless — but no less contemporary — expansion to the 18th-century Chilean Museum of Pre-Columbian Art in the capital Santiago.
+
+Radić juxtaposes manmade and natural materials in thoughtful ways, with structures sometimes embedded in rocky terrain or appearing to emerge from the ground. The roof of his celebrated Restaurant Mestizo, also in the capital city, is supported by huge load-bearing stones from a local quarry; his Pite House, a residence in nearby Papudo, sits nestled on a cliffside that shelters it from prevailing winds.
+
+Speaking to CNN via email ahead of the announcement, Radić said his approach to materials always depends on the context of the site he is designing on. “Naturally, the same material is understood very differently depending on its use and its historical position in a particular place,” he wrote. “Understanding that tension in the different places where I build is what matters in my work.”
+
+Radić’s international profile grew significantly in 2014, when he became one of the youngest architects ever invited to design the Serpentine Pavilion. The annual commission, at the Serpentine Galleries in London’s Kensington Gardens, is considered one of the profession’s most coveted honors (Frank Gehry, Oscar Niemeyer and Hadid were among the star names preceding Radić), and many considered Radić a surprise choice — himself included.
+
+His design upended expectations, too: In one of the initiative’s most surreal pavilions to date, he invited visitors into a cocoon-like fiberglass ring positioned on large rocks that looked like they had been casually scattered around the galleries’ lawn. The resulting praise had a significant impact on Radić’s career, he said.
+
+In the years since, he completed work in Croatia, Italy and the US, where he designed a flagship store for fashion brand Alexander McQueen in Miami, Florida. Elsewhere, he produced an innovative inflatable pavilion for the Chilean Architecture Biennial in 2023, and currently has projects underway in the UK, Spain, Switzerland and Albania, including a residential tower complex.
+
+The variety of these designs show Radić to be an architect who defies categorization — and one who intentionally eschews a signature style. “Style sometimes means having a continuous line of solutions across a wide range of really different projects — a filter that produces a certain formal signature,” he explained.
+
+“Personally, I find that boring; at least it is something I always try to avoid. I prefer to resolve projects case by case, creating places that can lead people to think about their material reality and their memory in a different way, from another point of view.”
+
+This year marks 10 years since his compatriot Alejandro Aravena became the first Chilean to win the Pritzker Prize. It was an achievement that Radić said had a “major effect” on the country’s architects. “I think it created a kind of shared idea around which many of them felt included in the same conversation from other latitudes,” he said of Aravena’s victory in 2016. “Now the same thing might happen again, I hope.”
+
+Aravena, who currently chairs the Pritzker Prize’s jury, returned the compliment, commending Radić for operating in “unforgiving circumstances, from the edge of the world, with a practice of just a few collaborators.” The former laureate’s statement also praised Radić’s “radical originality” and for “making the unobvious obvious.”
+
+The annual prize, which was founded by members of the family behind Hyatt Hotels, is sponsored by the Hyatt Foundation and modeled on the Nobel Prize. Organizers briefly delayed this year’s announcement after files released by the US Justice Department revealed then-executive chairman Tom Pritzker’s association with convicted sex offender Jeffrey Epstein and his accomplice Ghislaine Maxwell.
+
+Although not accused of wrongdoing, Pritzker stepped down from his role at the hotel chain last month, saying he “exercised terrible judgment in maintaining contact” with Epstein and Maxwell. Award organizers said he would now also “step aside from matters relating to the Prize,” to ensure it “remains focused on architectural excellence.”
+
+Asked if he took the matter into consideration when accepting his award, Radić said that the composition of the jury — which in addition to Aravena included former laureates Anne Lacaton and Kazuyo Sejima, as well as US Supreme Court Justice Stephen Breyer and the Yale School of Architecture’s Dean, Deborah Berke, among others — guaranteed the prize’s integrity.
+
+“For more than 30 years, my obsession has been architecture,” he added. “I continue to believe that architecture is a positive act, and I continue to believe that the Pritzker Prize remains part of that positive act, despite the circumstances.”
+
+Radić will be awarded a $100,000 grant and will receive a bronze medal at a ceremony later this year.</p>
+            <button class="copy-btn" onclick="copyText('text9')">Copy Article</button>
+        </div>
+
+    </div>
+
+    <script>
+        function copyText(id) {
+            const text = document.getElementById(id).innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                alert("Text Copied!");
+            }).catch(err => {
+                console.error('Error copying text: ', err);
+            });
+        }
+    </script>
+
+</body>
+</html>

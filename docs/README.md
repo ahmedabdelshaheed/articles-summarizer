@@ -1,5 +1,3 @@
-# AI Chat Pro 🤖
-
 A conversational AI web app that supports smart chat and automatic article rewriting into engaging social media posts — with AI-generated images.
 
 ---
